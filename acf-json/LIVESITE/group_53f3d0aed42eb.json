@@ -1,0 +1,52 @@
+{
+  "key":"group_53f3d0aed42eb",
+  "title":"Footer Stuff",
+  "fields":[
+    {
+      "key":"field_52137264c187a",
+      "label":"Copyright & Address",
+      "name":"footer_copyright",
+      "prefix":"",
+      "type":"wysiwyg",
+      "instructions":"",
+      "required":0,
+      "conditional_logic":0,
+      "default_value":"",
+      "toolbar":"full",
+      "media_upload":1,
+      "tabs":"all"
+    },
+    {
+      "key":"field_54512ae9661c2",
+      "label":"Additional Scripts",
+      "name":"additional_scripts",
+      "prefix":"",
+      "type":"textarea",
+      "instructions":"This will be output in the footer of the site. <strong>BE VERY CAREFUL<\/strong> what you put here as it will be inserted on every page of the site. An error in this code could take the site down. <strong>CAUTION!<\/strong>",
+      "required":0,
+      "conditional_logic":0,
+      "default_value":"",
+      "placeholder":"",
+      "maxlength":"",
+      "rows":"",
+      "new_lines":"",
+      "readonly":0,
+      "disabled":0
+    }
+  ],
+  "location":[
+    [
+      {
+        "param":"options_page",
+        "operator":"==",
+        "value":"acf-options-footer-info"
+      }
+    ]
+  ],
+  "menu_order":0,
+  "position":"normal",
+  "style":"default",
+  "label_placement":"top",
+  "instruction_placement":"label",
+  "hide_on_screen":""
+}

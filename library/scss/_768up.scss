@@ -1,0 +1,592 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+	overflow-x: hidden;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	max-width: 1300px;
+}
+
+
+
+/*********************
+HEADER SYTLES
+*********************/
+ul.social-nav {
+	max-width: none !important;
+	font-size: .8em !important;
+	margin:0 1em 0 0;
+	padding:0;
+	text-align: none;
+	float:none;
+	
+	li {
+		a {
+			color:darken($taupe, 15%) !important;
+
+			&:hover {
+				color:$red !important;
+			}
+		}
+	}
+}
+
+.header {
+	padding:0;
+	margin:0;
+	border-top:.5em solid $taupe;
+	border-bottom:.7em solid $blue;
+	@include box-shadow(3px 4px 4px -2px rgba(0,0,0,0.22));
+}
+
+#logo {
+	padding:1em 0 .4em;
+	display: inline-block;
+	max-width: 377px;
+	width: 32%;
+	float:left;
+	margin:0;
+
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+
+.sitetitle {
+    bottom: 1.5em;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+.taupe {
+	background-color: $taupe;
+	z-index: 100;
+}
+
+.blue {
+	background-color: $blue;
+}
+
+.light-blue {
+	background-color: $light-blue;
+}
+
+.white {
+	position: relative;
+}
+
+.swoop {
+	display: inline-block;
+	float:right;
+	clear:right;
+	padding:.3em 0 .5em 1em;
+	position: relative;
+	@include border-radius(0 0 0 1.6em);
+	@include box-shadow(3px 4px 4px -2px rgba(0,0,0,0.22));
+
+	&:after {
+		position: absolute;
+		top:0;
+		content:"";
+		top:0;
+		bottom:0;
+		left:100%;
+		width:300em;
+		height:100%;
+		@include box-shadow(0 4px 4px -2px rgba(0,0,0,0.22));
+	}
+
+	/* squares */
+	&:before {
+		position:absolute;
+		top:0;
+		content:"";
+		width:1.6em;
+		height:1.6em;
+		left:-1.6em;
+		z-index:1;
+	}
+
+	&.bottom {
+		@include border-radius(1.67em 0 0 0);
+		position: absolute;
+		float: none;
+		bottom:0;
+		right:0;
+		padding:.5em 0 0em 1em;
+		max-width:64%;
+		@include box-shadow(none);
+
+		/* squares */
+		&:before {
+			bottom:0 !important;
+			top: auto !important;
+		}
+
+		&:after {
+			@include box-shadow(none);
+		}
+	}
+
+	&.taupe:before, &.taupe:after {
+		background-color: $taupe;
+	}
+
+	&.light-blue:before, &.light-blue:after {
+		background-color: $light-blue;
+	}
+
+	&.blue:before, &.blue:after {
+		background-color: $blue;
+	}
+
+	span {
+		&.curvy {
+			display: block;
+			float:left;
+
+			/* circles */
+			&:before {
+				position:absolute;
+				top:0;
+				content:"";
+				background-color: $white;
+				width:2.9em;
+				height:2.9em;
+				left:-2.5em;
+				z-index:2;
+				@include border-radius(1.6em 2.6em);
+			}
+		}
+
+		/* circles */
+		&.rounddown {
+			display: block;
+			float:left;
+
+				&:before {
+				position:absolute;
+				bottom:0;
+				content:"";
+				background-color: $white;
+				width:2.9em;
+				height:2.9em;
+				left:-2.5em;
+				z-index:2;
+				@include border-radius(2.6em 1.6em);
+			}
+		}
+	}
+
+}
+
+.taupe.swoop {
+	position: inherit;
+	background-color: $taupe;
+	width: auto;
+	margin:inherit;
+	padding:.2em .2em .2em 1.5em;
+	text-align: left;
+}
+
+.social-nav {
+	float:left;
+	margin: 0 1em 0 0;
+	padding:0;
+}
+.header #searchform {
+	float:right;
+	input {
+		display: inline;
+	}
+	span {
+		color:$white;
+		font-size:1.1em;
+		margin-right:.1em;
+	}
+
+	.button {
+		display: inline;
+	}
+}
+
+/*********************
+PAGE & POST STYLES
+*********************/
+.firstcol {
+	width:62.6666667%;
+	margin-right:2%;
+}
+
+.secondcol {
+	width: 33%;
+}
+
+.alignright, img.alignright {
+	margin: 1em 0 2.5em 2.5em;
+}
+
+.alignleft, img.alignleft {
+	margin: 1em 2.5em 2.5em 0; 
+}
+.entry-content {
+	.alignright, img.alignright { 
+	  -webkit-transform: rotate(7.5deg);  /* Chrome, Safari 3.1+ */
+	     -moz-transform: rotate(7.5deg);  /* Firefox 3.5-15 */
+	      -ms-transform: rotate(7.5deg);  /* IE 9 */
+	       -o-transform: rotate(7.5deg);  /* Opera 10.50-12.00 */
+	          transform: rotate(7.5deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+	}
+
+	.alignleft, img.alignleft {
+	  -webkit-transform: rotate(-7.5deg);  /* Chrome, Safari 3.1+ */
+	     -moz-transform: rotate(-7.5deg);  /* Firefox 3.5-15 */
+	      -ms-transform: rotate(-7.5deg);  /* IE 9 */
+	       -o-transform: rotate(-7.5deg);  /* Opera 10.50-12.00 */
+	          transform: rotate(-7.5deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+	}
+
+	.home & {
+		.alignleft, img.alignleft, .alignright, img.alignright {
+			margin-top:0;
+			-webkit-transform: none;
+	     -moz-transform: none;
+	      -ms-transform: none;
+	       -o-transform: none;
+	          transform: none;
+		}
+
+		.alignleft, img.alignleft {
+			margin-right: 1.5em;
+		}
+
+		.alignright, img.alignright {
+			margin-left: 1.5em;
+		}
+	}	
+}
+
+
+
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav.top-nav, .nav.ancillary-nav {
+	display: block;
+}
+.blue.swoop > select {
+	display: none;
+}
+
+.nav ul {
+	margin:0;
+	padding:0;
+}
+.nav {
+	display: inline-block;
+	background: transparent;
+	border: 0;
+	font-family: $header-med;
+	margin:0;
+	padding: 0;
+	text-align: right;
+	overflow: visible !important;
+
+	li {
+		display: inline-block;
+		list-style: none;
+		position: relative;
+		margin:0;
+		background-color: transparent;
+
+		a {
+			border-bottom: 0;
+			text-decoration: none;
+			font-size: .7em;
+			padding:0em .5em .1em .5em;
+			color:$white;
+			text-transform: uppercase;
+
+			&:hover {
+				color:$blue;
+			}
+		}
+
+		&:hover, &:focus {
+			background-color: $light-blue;
+			@include border-radius(1em 1em 1em 1em);
+			@include box-shadow(0 0 .477em rgba(0, 69, 124, 0.44));
+		}
+
+		/* .hover added via jQuery if li contains ul */
+		&.hover:hover, &.hover:focus {
+			@include border-radius(1em 1em 0 0);
+		}
+
+		&:hover > a  {
+			background-color: transparent;
+			
+			border: none;
+			@include box-shadow(0);
+		}
+
+		&:first-child {}
+		&:last-child {}
+
+		/*
+		plan your menus and drop-downs wisely.
+		*/
+		ul.sub-menu,
+		ul.children {
+			background-color: $light-blue;
+			list-style: none;
+			width: 200px;
+			border-top: 0;
+			position: absolute;
+			display: none;
+			z-index: 8999;
+			padding:.5em 0 0 0;
+			text-align: left;
+			@include border-radius(0 1em 1em 1em);
+			@include box-shadow(0 .477em .477em rgba(0, 69, 124, 0.44));
+
+			li {
+				padding:0;
+				margin-left: 0;
+				@include box-shadow(none);
+
+				a {
+					padding: .6em .8em;
+					text-transform: none;
+					display: block;
+					width: 200px;
+					border-left: none;
+					border-right: none;
+					border-bottom: 1px dotted $white;
+				}
+
+				&:first-child {}
+
+				&:last-child {
+					a {
+						border-bottom: 0;
+					}
+				}
+
+			}
+
+			/* highlight sub-menu current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current-page-ancestor {
+				a {}
+			}
+		}
+
+		/* showing sub-menus */
+		&:hover ul {
+			top: auto;
+			display: block;
+		}
+
+		&:last-of-type ul {
+			right:0;
+			@include border-radius(1em 0 1em 1em);
+		}
+
+	} /* end .menu ul li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current-page-ancestor {
+		a {}
+	}  /* end current highlighters */
+
+	&.ancillary-nav {
+		font-size:.8em;
+		padding-top: .2em;
+		text-align: center;
+
+		a {
+			display:inline-block;
+			line-height: 1.1em;
+			letter-spacing: 1px;
+
+			span {
+				letter-spacing: 3px;
+			}
+		}
+
+		li {
+			@include box-shadow(none);
+			margin-bottom: 0;
+
+			&:hover, &:focus {
+				background-color: lighten($light-blue, 15%);
+				@include box-shadow(none);
+			}
+
+			&:hover > a  {
+				
+			}
+
+		}
+
+		ul.sub-menu,
+		ul.children {
+			text-align:left;
+			background-color: lighten($light-blue, 15%);
+			@include box-shadow(0 .477em .477em rgba(35, 143, 185, 0.8));
+		}
+	}
+
+} /* end .nav */
+
+#menu-social-links {
+	font-size: .7em;
+}
+
+.header #searchform  {
+	margin-top:.1em;
+	padding:0 0 .3em;
+	
+	input, .button {
+		font-size:.7em;	
+		display: inline-block;;
+		float:left;
+	}
+
+	input {
+		margin-right:.2em;
+	}
+
+	.button {
+		font-size:.6em;		
+	}
+	
+}
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+	margin-top: 0;
+}
+
+	
+
+	.widget {
+		padding: 0;
+		margin:  0 1em 2.2em 0;
+
+		ul {
+			li {
+				margin-bottom: 0.75em;
+
+				&:first-child {}
+				&:last-child {}
+				a {}
+				/* deep nesting */
+
+				ul {
+					margin-top: 0.75em;
+					padding-left: 1em;
+				}
+			}
+		}
+	}
+
+
+
+/*********************
+FOOTER STYLES
+*********************/
+.footer-widgets-main {
+
+	& > div {
+		float:left;
+		margin-right: 3.333%;
+
+		&:last-of-type {
+			margin-right:0;
+		}
+	}
+
+	&.floats_1 {
+		& > div {
+			width:100%;
+		}
+	}
+
+	&.floats_2 {
+		& > div {
+			width:48.3335%;
+		}
+	}
+
+	&.floats_3 {
+		& > div {
+			width:30%;
+		}
+	}
+
+	&.floats_4 {
+		& > div {
+			width:22.5002%;
+		}
+	}
+
+	&.floats_5 {
+		& > div {
+			width:17.3336%;
+		}
+	}
+}
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links {
+	ul {
+		li {
+			a {
+				&:hover {}
+			}
+			/*
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/
+			ul {}
+		}
+	}
+} /* end .footer-links */
+

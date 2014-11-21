@@ -1,0 +1,602 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't 
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+*/
+/* import mixins */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques like box shadow and
+border-radius.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+/*********************
+TOOLS
+*********************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'FontAwesome';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid; }
+
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f; }
+
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8; }
+
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4; }
+
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2; }
+
+/*********************
+BORDER RADIUS
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include border-radius(4px 4px 0 0);
+*/
+/*********************
+TRANISTION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+BOX SHADOWS
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include box-shadow(inset 0 0 4px rgba(0,0,0,0.22));
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*********************
+BUTTONS
+*********************/
+.button, .button:visited {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 1px solid #186481;
+  border-top-color: #1d789b;
+  border-left-color: #1d789b;
+  padding: .2em .5em;
+  color: white;
+  display: inline-block;
+  font-size: .8em;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  line-height: 1.3em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  -border-radius: 0.4em;
+  border-radius: 0.4em;
+  background-color: #1f7ea4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#238fb9), to(#1f7ea4));
+  background-image: -webkit-linear-gradient(top, #238fb9, #1f7ea4);
+  background-image: -moz-linear-gradient(top, #238fb9, #1f7ea4);
+  background-image: -o-linear-gradient(top, #238fb9, #1f7ea4);
+  background-image: linear-gradient(to bottom, #238fb9, #1f7ea4); }
+  .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
+    color: white;
+    border: 1px solid #186481;
+    border-top-color: #134d63;
+    border-left-color: #134d63;
+    background-color: #1b6e8e;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1f7ea4), to(#1b6e8e));
+    background-image: -webkit-linear-gradient(top, #1f7ea4, #1b6e8e);
+    background-image: -moz-linear-gradient(top, #1f7ea4, #1b6e8e);
+    background-image: -o-linear-gradient(top, #1f7ea4, #1b6e8e);
+    background-image: linear-gradient(to bottom, #1f7ea4, #1b6e8e); }
+  .button:active, .button:visited:active {
+    background-color: #238fb9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1f7ea4), to(#238fb9));
+    background-image: -webkit-linear-gradient(top, #1f7ea4, #238fb9);
+    background-image: -moz-linear-gradient(top, #1f7ea4, #238fb9);
+    background-image: -o-linear-gradient(top, #1f7ea4, #238fb9);
+    background-image: linear-gradient(to bottom, #1f7ea4, #238fb9); }
+  .button.blue, .button.blue:visited, .button:visited.blue, .button:visited.blue:visited {
+    border-color: #002949;
+    text-shadow: 0 1px 1px #002949;
+    background-color: #003762;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#00457c), to(#003762));
+    background-image: -webkit-linear-gradient(top, #00457c, #003762);
+    background-image: -moz-linear-gradient(top, #00457c, #003762);
+    background-image: -o-linear-gradient(top, #00457c, #003762);
+    background-image: linear-gradient(to bottom, #00457c, #003762);
+    -webkit-box-shadow: inset 0 0 3px #0072ce;
+    -moz-box-shadow: inset 0 0 3px #0072ce;
+    -ms-box-shadow: inset 0 0 3px #0072ce;
+    -o-box-shadow: inset 0 0 3px #0072ce;
+    -box-shadow: inset 0 0 3px #0072ce;
+    box-shadow: inset 0 0 3px #0072ce; }
+    .button.blue:hover, .button.blue:focus, .button.blue:visited:hover, .button.blue:visited:focus, .button:visited.blue:hover, .button:visited.blue:focus, .button:visited.blue:visited:hover, .button:visited.blue:visited:focus {
+      border-color: #001a2f;
+      background-color: #002949;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#003a68), to(#002949));
+      background-image: -webkit-linear-gradient(top, #003a68, #002949);
+      background-image: -moz-linear-gradient(top, #003a68, #002949);
+      background-image: -o-linear-gradient(top, #003a68, #002949);
+      background-image: linear-gradient(to bottom, #003a68, #002949); }
+    .button.blue:active, .button.blue:visited:active, .button:visited.blue:active, .button:visited.blue:visited:active {
+      background-color: #00457c;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#003762), to(#00457c));
+      background-image: -webkit-linear-gradient(top, #003762, #00457c);
+      background-image: -moz-linear-gradient(top, #003762, #00457c);
+      background-image: -o-linear-gradient(top, #003762, #00457c);
+      background-image: linear-gradient(to bottom, #003762, #00457c); }
+  .button.red, .button.red:visited, .button:visited.red, .button:visited.red:visited {
+    border-color: #b51715;
+    text-shadow: 0 1px 1px #b51715;
+    background-color: #cc1a17;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e31d1a), to(#cc1a17));
+    background-image: -webkit-linear-gradient(top, #e31d1a, #cc1a17);
+    background-image: -moz-linear-gradient(top, #e31d1a, #cc1a17);
+    background-image: -o-linear-gradient(top, #e31d1a, #cc1a17);
+    background-image: linear-gradient(to bottom, #e31d1a, #cc1a17);
+    -webkit-box-shadow: inset 0 0 3px #ed6462;
+    -moz-box-shadow: inset 0 0 3px #ed6462;
+    -ms-box-shadow: inset 0 0 3px #ed6462;
+    -o-box-shadow: inset 0 0 3px #ed6462;
+    -box-shadow: inset 0 0 3px #ed6462;
+    box-shadow: inset 0 0 3px #ed6462; }
+    .button.red:hover, .button.red:focus, .button.red:visited:hover, .button.red:visited:focus, .button:visited.red:hover, .button:visited.red:focus, .button:visited.red:visited:hover, .button:visited.red:visited:focus {
+      border-color: #9e1412;
+      background-color: #b51715;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#d11b18), to(#b51715));
+      background-image: -webkit-linear-gradient(top, #d11b18, #b51715);
+      background-image: -moz-linear-gradient(top, #d11b18, #b51715);
+      background-image: -o-linear-gradient(top, #d11b18, #b51715);
+      background-image: linear-gradient(to bottom, #d11b18, #b51715); }
+    .button.red:active, .button.red:visited:active, .button:visited.red:active, .button:visited.red:visited:active {
+      background-color: #e31d1a;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#cc1a17), to(#e31d1a));
+      background-image: -webkit-linear-gradient(top, #cc1a17, #e31d1a);
+      background-image: -moz-linear-gradient(top, #cc1a17, #e31d1a);
+      background-image: -o-linear-gradient(top, #cc1a17, #e31d1a);
+      background-image: linear-gradient(to bottom, #cc1a17, #e31d1a); }
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to 
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection. 
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+/*********************
+NAVIGATION STYLES
+*********************/
+/* .menu is clearfixed inside mixins.scss */
+.menu {
+  /* end .menu ul */ }
+  .menu ul {
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .menu ul li {
+      /*
+      plan your menus and drop-downs wisely.
+      */ }
+      .menu ul li a {
+        /*
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
+        */ }
+
+/* end .menu */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* entry content */
+.entry-content {
+  /* at this larger size, we can start to align images */ }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left; }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both; }
+
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+body {
+  overflow-x: hidden; }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  max-width: 1140px; }
+
+/*********************
+HEADER SYTLES
+*********************/
+.header {
+  border-top: 0.5em solid #afa198; }
+
+#logo {
+  padding: 1em 0;
+  display: inline-block;
+  max-width: 377px;
+  width: 40%; }
+
+.stretch {
+  width: 100%; }
+
+.taupe {
+  background-color: #afa198; }
+
+.blue {
+  background-color: #00457c; }
+
+.light-blue {
+  background-color: #3ac1e1; }
+
+.white {
+  position: relative; }
+
+.swoop {
+  display: inline-block;
+  float: right;
+  padding: .5em 0 .5em 1em;
+  position: relative;
+  -webkit-border-radius: 0 0 0 1.6em;
+  -moz-border-radius: 0 0 0 1.6em;
+  -ms-border-radius: 0 0 0 1.6em;
+  -o-border-radius: 0 0 0 1.6em;
+  -border-radius: 0 0 0 1.6em;
+  border-radius: 0 0 0 1.6em;
+  /* squares */ }
+  .swoop:after {
+    position: absolute;
+    top: 0;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 300em;
+    height: 100%; }
+  .swoop:before {
+    position: absolute;
+    top: 0;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    left: -1.5em;
+    z-index: 1; }
+  .swoop.taupe:before, .swoop.taupe:after {
+    background-color: #afa198; }
+  .swoop.light-blue:before, .swoop.light-blue:after {
+    background-color: #3ac1e1; }
+  .swoop span.curvy {
+    display: block;
+    float: left;
+    /* circles */ }
+    .swoop span.curvy:before {
+      position: absolute;
+      top: 0;
+      content: "";
+      background-color: white;
+      width: 2.9em;
+      height: 2.9em;
+      left: -2.9em;
+      z-index: 2;
+      -webkit-border-radius: 1.6em 2.5em;
+      -moz-border-radius: 1.6em 2.5em;
+      -ms-border-radius: 1.6em 2.5em;
+      -o-border-radius: 1.6em 2.5em;
+      -border-radius: 1.6em 2.5em;
+      border-radius: 1.6em 2.5em; }
+
+.social-nav {
+  float: left;
+  margin: 0 1em 0 0;
+  padding: 0; }
+
+#searchform {
+  float: right; }
+  #searchform span {
+    color: white;
+    font-size: 1.1em;
+    margin-right: .1em; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav {
+  background: transparent;
+  border: 0;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav li {
+    float: left;
+    position: relative;
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    /* showing sub-menus */ }
+    .nav li a {
+      border-bottom: 0;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
+      .nav li a:hover, .nav li a:focus {
+        background-color: #afa198; }
+    .nav li:hover > a {
+      background-color: #00457c; }
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      width: 200px;
+      border: 1px solid #cccccc;
+      border-top: 0;
+      position: absolute;
+      display: none;
+      z-index: 8999;
+      /* highlight sub-menu current page */ }
+      .nav li ul.sub-menu li,
+      .nav li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+        .nav li ul.sub-menu li a,
+        .nav li ul.children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block;
+          width: 180px;
+          border-bottom: 1px solid #ccc; }
+        .nav li ul.sub-menu li:last-child a,
+        .nav li ul.children li:last-child a {
+          border-bottom: 0; }
+    .nav li:hover ul {
+      top: auto;
+      display: block; }
+
+/* end .nav */
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+  margin-top: 2.2em; }
+
+.widgettitle {
+  border-bottom: 2px solid #444;
+  margin-bottom: 0.75em; }
+
+.widget {
+  padding: 0 1em;
+  margin: 0 0 2.2em 0; }
+  .widget ul li {
+    margin-bottom: 0.75em;
+    /* deep nesting */ }
+    .widget ul li ul {
+      margin-top: 0.75em;
+      padding-left: 1em; }
+
+/*********************
+FOOTER STYLES
+*********************/
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links ul li {
+  /*
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */ }
+
+/* end .footer-links */
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+/* 
+you can call the larger styles if you want, but there's really no need 
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/
