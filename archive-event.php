@@ -49,6 +49,13 @@ get_header(); ?>
 			?>
 			</h1>
 		</header><?php echo do_shortcode('[eo_fullcalendar headerLeft="category" headerCenter="title" headerRight="month,agendaWeek today prev,next"]'); ?>
+		<p style="margin-top:1em;" class="cf">
+			<?php echo do_shortcode("[eo_subscribe class='button mar-right' title='Subscribe with Google' type='google']Subscribe with Google[/eo_subscribe]"); 
+    			echo do_shortcode("[eo_subscribe class='button' title='Subscribe with Webcal/iCal' type='webcal']Subscribe with iCal / WebCal[/eo_subscribe]");
+
+    		?>
+    		</p>
+
 
 		
 					

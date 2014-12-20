@@ -110,4 +110,12 @@
 		</div>
 	<?php endif; ?>
 
+	<?php
+  //Inside the loop
+  $url = eo_get_add_to_google_link();
+  echo '<a class="button" href="'.esc_url($url).'" title="Click to add this event to a Google calendar">Add to Google Calendar</a>';
+  ?>
+
+  <a class="permalink" href="<?php the_permalink(); ?>" title="Permalink for <?php the_title_attribute(); ?>">Permalink</a>
+
 </div><!-- .entry-meta -->
