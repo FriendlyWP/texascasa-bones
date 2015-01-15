@@ -392,11 +392,15 @@ POSTS & CONTENT STYLES
 	}
 }
 
+table {
+	table-layout: fixed;
+}
 /**** DATATABLES *****/
 #pub_table.pretty {
 	font-size: .9em;
 	line-height:1.25em;
 	margin-bottom:.9em;
+	table-layout: auto;
 
 	.mobile_hide_min {
 		display: none;
